@@ -1,0 +1,586 @@
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;600;700&display=swap");
+:root {
+  --fontsize-herotext: clamp(2.19rem, calc(1.65rem + 2.68vw), 4.06rem);
+  --fontsize-herodesc: clamp(2.19rem, calc(1.65rem + 2.68vw), 4.06rem);
+  --facebook: "" ;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Public Sans", sans-serif;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/*** 
+
+====================================================================
+ Navbar style
+====================================================================
+
+***/
+.easybank__navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  background-color: white;
+}
+
+.easybank__navbar-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  max-width: 1300px;
+  padding: 10px 6%;
+  z-index: 1000;
+  height: 60px;
+}
+
+.easybank__navbar-nav-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+}
+.easybank__navbar-nav-links li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-inline: 1rem;
+  font-size: 15px;
+  cursor: pointer;
+  height: 60px;
+  position: relative;
+}
+@media screen and (max-width: 768px) {
+  .easybank__navbar-nav-links li {
+    display: none;
+  }
+}
+.easybank__navbar-nav-links li a {
+  text-decoration: none;
+  color: hsl(233deg, 8%, 62%);
+  -webkit-transition: all 100ms ease;
+  -o-transition: all 100ms ease;
+  transition: all 100ms ease;
+}
+.easybank__navbar-nav-links li::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  border-radius: 5px;
+  background: -webkit-gradient(linear, right top, left top, from(#2bb6d9), to(#31d35c));
+  background: -o-linear-gradient(right, #2bb6d9, #31d35c);
+  background: linear-gradient(to left, #2bb6d9, #31d35c);
+  -webkit-transform: scaleX(0);
+      -ms-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: -webkit-transform 200ms ease;
+  transition: -webkit-transform 200ms ease;
+  -o-transition: transform 200ms ease;
+  transition: transform 200ms ease;
+  transition: transform 200ms ease, -webkit-transform 200ms ease;
+}
+.easybank__navbar-nav-links li:hover::before {
+  -webkit-transform: scaleX(1);
+      -ms-transform: scaleX(1);
+          transform: scaleX(1);
+}
+.easybank__navbar-nav-links li:hover a {
+  color: black;
+}
+
+.easybank__btn button {
+  padding: 10px 18px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: -o-linear-gradient(45deg, hsl(192deg, 70%, 51%), hsl(136deg, 65%, 51%));
+  background: linear-gradient(45deg, hsl(192deg, 70%, 51%), hsl(136deg, 65%, 51%));
+  color: white;
+}
+.easybank__btn button:hover {
+  background: -o-linear-gradient(135deg, hsl(192deg, 70%, 51%), hsl(136deg, 65%, 51%));
+  background: linear-gradient(-45deg, hsl(192deg, 70%, 51%), hsl(136deg, 65%, 51%));
+}
+
+@media screen and (max-width: 768px) {
+  .easybank__navbar .easybank__btn {
+    display: none;
+  }
+}
+
+.easybank__mobile-navbar-nav-links {
+  display: none;
+  position: absolute;
+  z-index: 11111111111;
+}
+@media screen and (max-width: 768px) {
+  .easybank__mobile-navbar-nav-links {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 15rem;
+    top: 5rem;
+    height: 15rem;
+    padding: 12px;
+    background-color: white;
+    -webkit-box-shadow: 2px 200px 310px 0px black;
+            box-shadow: 2px 200px 310px 0px black;
+    border-radius: 5px;
+    top: 5rem;
+  }
+}
+.easybank__mobile-navbar-nav-links li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-inline: 1rem;
+  font-size: 18px;
+  cursor: pointer;
+  height: 40px;
+  position: relative;
+}
+.easybank__mobile-navbar-nav-links li a {
+  text-decoration: none;
+  color: black;
+}
+.easybank__mobile-navbar-nav-links li::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  border-radius: 5px;
+  background: -webkit-gradient(linear, right top, left top, from(#2bb6d9), to(#31d35c));
+  background: -o-linear-gradient(right, #2bb6d9, #31d35c);
+  background: linear-gradient(to left, #2bb6d9, #31d35c);
+  -webkit-transform: scaleX(0);
+      -ms-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: -webkit-transform 200ms ease;
+  transition: -webkit-transform 200ms ease;
+  -o-transition: transform 200ms ease;
+  transition: transform 200ms ease;
+  transition: transform 200ms ease, -webkit-transform 200ms ease;
+}
+.easybank__mobile-navbar-nav-links li:hover::before {
+  -webkit-transform: scaleX(1);
+      -ms-transform: scaleX(1);
+          transform: scaleX(1);
+}
+.easybank__mobile-navbar-nav-links.active {
+  display: block;
+}
+
+@media screen and (min-width: 768px) {
+  .easybank__mobile-navbar-nav-links {
+    display: none;
+  }
+  .ham {
+    display: none;
+  }
+}
+/*** 
+
+====================================================================
+Hero style
+====================================================================
+
+***/
+.bg-intro-desktop {
+  position: absolute;
+  top: -20%;
+  right: -25%;
+  z-index: -1000;
+  height: 110vh;
+  overflow: hidden;
+}
+@media screen and (max-width: 1100px) {
+  .bg-intro-desktop {
+    top: -25%;
+    right: -32%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .bg-intro-desktop {
+    display: none;
+  }
+}
+.bg-intro-desktop img {
+  width: 60rem;
+}
+
+.bg-intro-mobile {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1000;
+  height: 110vh;
+}
+@media screen and (min-width: 1000px) {
+  .bg-intro-mobile {
+    display: none;
+    background-color: rebeccapurple;
+  }
+}
+@media screen and (max-width: 350px) {
+  .bg-intro-mobile {
+    top: -10%;
+  }
+}
+
+.easybank__hero {
+  max-width: 1400px;
+  width: 100%;
+  margin-inline: auto;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.easybank__hero-hero {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 1300px;
+  width: 100%;
+  margin-inline: auto;
+  padding: 10px 5%;
+}
+@media screen and (max-width: 1000px) {
+  .easybank__hero-hero {
+    -ms-flex-wrap: wrap-reverse;
+        flex-wrap: wrap-reverse;
+    text-align: center;
+    margin: 0 auto;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .easybank__hero-hero_content {
+    max-width: 500px;
+  }
+}
+.easybank__hero-hero_content h1 {
+  font-size: var(--fontsize-herotext);
+  font-weight: 300;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+.easybank__hero-hero_content p {
+  font-size: 16px;
+  line-height: 25px;
+  color: hsl(233deg, 8%, 62%);
+  margin-bottom: 1rem;
+}
+@media screen and (max-width: 500px) {
+  .easybank__hero-hero_content p {
+    text-align: justify;
+  }
+}
+
+.easybank__hero-hero_image {
+  z-index: -1000;
+}
+@media screen and (min-width: 1000px) {
+  .easybank__hero-hero_image {
+    margin-top: -8%;
+    margin-right: -18%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .easybank__hero-hero_image {
+    margin-top: -25%;
+  }
+}
+.easybank__hero-hero_image img {
+  width: 100%;
+}
+
+/*** 
+
+====================================================================
+Why Choose Styles
+====================================================================
+
+***/
+.easybank__whychoose-wrap {
+  background-color: hsl(220deg, 16%, 96%);
+}
+
+.easybank__whychoose {
+  max-width: 1300px;
+  width: 100%;
+  margin-inline: auto;
+  padding: 5rem 5%;
+}
+
+.easybank__whychoose-content h1 {
+  font-weight: 300;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+.easybank__whychoose-content p {
+  font-size: 16px;
+  line-height: 25px;
+  color: hsl(233deg, 8%, 62%);
+  margin-bottom: 5rem;
+}
+@media screen and (max-width: 500px) {
+  .easybank__whychoose-content {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 510px) {
+  .easybank__whychoose-content {
+    width: 30rem;
+  }
+}
+
+.easybank__whychoose-reasons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+@media screen and (max-width: 500px) {
+  .easybank__whychoose-reasons {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.easybank__whychoose-reasons-reason {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 15em;
+          flex: 0 1 15em;
+  margin-bottom: 3rem;
+  margin-inline: 1rem;
+}
+.easybank__whychoose-reasons-reason h3 {
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+.easybank__whychoose-reasons-reason p {
+  text-align: justify;
+  font-size: 14px;
+  line-height: 25px;
+  color: hsl(233deg, 8%, 62%);
+  margin-bottom: 1rem;
+}
+@media screen and (max-width: 500px) {
+  .easybank__whychoose-reasons-reason {
+    text-align: center;
+  }
+}
+
+/*** 
+
+====================================================================
+Article Styles
+====================================================================
+
+***/
+.easybank__article-wrap {
+  background-color: hsl(0deg, 0%, 98%);
+}
+
+.easybank__article {
+  max-width: 1300px;
+  width: 100%;
+  margin-inline: auto;
+  padding: 5rem 5%;
+}
+
+.easybank__article-content h1 {
+  font-weight: 300;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.easybank__article-articles {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.easybank__article-articles-article {
+  background-color: white;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 16em;
+          flex: 1 1 16em;
+  margin-bottom: 3rem;
+  margin-inline: 1rem;
+  height: 28rem;
+}
+.easybank__article-articles-article img {
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  height: 12rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 20px;
+}
+.easybank__article-articles-article span {
+  font-size: 12px;
+  font-weight: bolder;
+  padding: 1rem;
+}
+.easybank__article-articles-article h3 {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  font-weight: 300;
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+}
+.easybank__article-articles-article p {
+  text-align: justify;
+  font-size: 16px;
+  line-height: 25px;
+  color: hsl(233deg, 8%, 62%);
+  padding: 0 1rem;
+}
+
+.easybank__footer {
+  background-color: #2d314d;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 2rem 5px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-inline: auto;
+  width: 100%;
+  max-width: 1300px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+.easybank__footer-column-f {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 75%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+@media screen and (max-width: 500px) {
+  .easybank__footer-column-f {
+    text-align: center;
+  }
+}
+.easybank__footer-column-f ul {
+  list-style: none;
+  margin: 1rem;
+}
+.easybank__footer-column-f ul li {
+  font-size: 15px;
+  margin-bottom: 1rem;
+}
+.easybank__footer-column-f ul li a {
+  text-decoration: none;
+  color: hsl(219deg, 81%, 94%);
+}
+.easybank__footer-column-f ul li a:hover {
+  color: hsl(136deg, 63%, 64%);
+}
+
+.easybank__footer-column-f > * {
+  -ms-flex-preferred-size: 10em;
+      flex-basis: 10em;
+}
+
+.easybank__footer-column-inner-logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.easybank__footer-column-inner-logo .icons {
+  margin-top: 2rem;
+}
+.easybank__footer-column-inner-logo .icons img {
+  cursor: pointer;
+  margin-inline: 0.2em;
+}
